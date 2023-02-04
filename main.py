@@ -1,6 +1,6 @@
 import tokens 
 import numpy as np
-
+from tabulate import tabulate
 def detect_keywords(text):
 	arr = []
 	for word in text:
@@ -61,8 +61,12 @@ def detect_identifiers(text):
 with open('test.txt') as t:
 	text = t.read().split()
 
+headers = ['Keywords', 'Operators', 'Delimiters', 'Identifiers', 'Numbers']
+table = zip(detect_keywords(text), detect_operators(
+	text), detect_delimiters(text), detect_identifiers(text), detect_num(text))
+print(tabulate(table, headers=headers, floatfmt=".4f"))
 
-print("Keywords: ", np.array(detect_keywords(text)))
+print("Keywords: ", detect_keywords(text))
 print("Operators: ",detect_operators(text))
 print("Delimiters: ",detect_delimiters(text))
 print("Identifiers: ",detect_identifiers(text))

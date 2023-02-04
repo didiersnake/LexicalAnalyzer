@@ -1,8 +1,8 @@
 int main() {
-    int sum = 0;
+    int sum = 0 ;
     int i;
-    for ( i = 0; i < 50; i + 10 ) {
-         sum = sum + i;
+    for ( i = 0 ; i < 50 ; i + 10 ) {
+         sum = sum + i ;
         
     }
     return sum;

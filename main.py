@@ -1,4 +1,5 @@
 import tokens 
+import numpy as np
 
 def detect_keywords(text):
 	arr = []
@@ -57,10 +58,11 @@ def detect_identifiers(text):
 			arr.append(word)
 	return arr
 
-with open('test.cpp') as t:
+with open('test.txt') as t:
 	text = t.read().split()
 
-print("Keywords: ",detect_keywords(text))
+
+print("Keywords: ", np.array(detect_keywords(text)))
 print("Operators: ",detect_operators(text))
 print("Delimiters: ",detect_delimiters(text))
 print("Identifiers: ",detect_identifiers(text))

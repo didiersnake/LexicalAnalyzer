@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>main.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>main.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tokens</span>
+<span class="kn">from</span> <span class="nn">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <h4><span id="detect-keywords" href="detect-keywords"> Detect Keywords </span></h4>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">detect_keywords</span><span class="p">(</span><span class="n">text</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <pre><code>Detects the keywords in source language scripts
+
+Args:
+</code></pre>
+<p>text (string): A string representing the source language code to be analysed</p>
+<pre><code>Returns:
+</code></pre>
+<p>Array : An array of all the keywords detected in the text passed as Argument</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokens</span><span class="o">.</span><span class="n">keywords</span><span class="p">:</span>
+           <span class="n">arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <h4><span id="detect-operators" href="detect-operators"> Detect operators </span></h4>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">detect_operators</span><span class="p">(</span><span class="n">text</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <pre><code>Detects the operators in source language scripts
+
+Args:
+</code></pre>
+<p>text (string): A string representing the source language code to be analysed</p>
+<pre><code>Returns:
+</code></pre>
+<p>Array : An array of all the operators detected in the text passed as Argument</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokens</span><span class="o">.</span><span class="n">operators</span><span class="p">:</span>
+            <span class="n">arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <h4><span id="detect-delimiters" href="detect-delimiters"> Detect delimiters </span></h4>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">detect_delimiters</span><span class="p">(</span><span class="n">text</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <pre><code>Detects the Delimiters in source language scripts
+
+Args:
+</code></pre>
+<p>text (string): A string representing the source language code to be analysed</p>
+<pre><code>Returns:
+</code></pre>
+<p>Array : An array of all the delimiters detected in the text passed as Argument</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokens</span><span class="o">.</span><span class="n">delimiters</span><span class="p">:</span>
+            <span class="n">arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <h4><span id="detect-numbers" href="detect-numbers"> Detect numbers </span></h4>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">detect_num</span><span class="p">(</span><span class="n">text</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <pre><code>Detects the numbers in source language scripts
+
+Args:
+</code></pre>
+<p>text (string): A string representing the source language code to be analysed</p>
+<pre><code>Returns:
+</code></pre>
+<p>Array : An array of all the numbers detected in the text passed as Argument</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+            <span class="n">arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">pass</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      <h4><span id="detect-identifiers" href="detect-identifiers"> Detect identifiers </span></h4>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">detect_identifiers</span><span class="p">(</span><span class="n">text</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      <pre><code>Detects the identifiers in source language scripts
+
+Args:
+</code></pre>
+<p>text (string): A string representing the source language code to be analysed</p>
+<pre><code>Returns:
+</code></pre>
+<p>Array : An array of all the identifiers detected in the text passed as Argument</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">k</span> <span class="o">=</span> <span class="n">detect_keywords</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">o</span> <span class="o">=</span> <span class="n">detect_operators</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">detect_delimiters</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">detect_num</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">not_ident</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="n">o</span> <span class="o">+</span> <span class="n">d</span> <span class="o">+</span> <span class="n">n</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">not_ident</span><span class="p">:</span>
+            <span class="n">arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">arr</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;src/test.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
+	<span class="n">text</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Table of tokens&quot;</span><span class="p">)</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Keywords&#39;</span><span class="p">,</span> <span class="s1">&#39;Operators&#39;</span><span class="p">,</span> <span class="s1">&#39;Delimiters&#39;</span><span class="p">,</span> <span class="s1">&#39;Identifiers&#39;</span><span class="p">,</span> <span class="s1">&#39;Numbers&#39;</span><span class="p">]</span>
+<span class="n">table</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">detect_keywords</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="n">detect_operators</span><span class="p">(</span>
+	<span class="n">text</span><span class="p">),</span> <span class="n">detect_delimiters</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="n">detect_identifiers</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="n">detect_num</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">floatfmt</span><span class="o">=</span><span class="s2">&quot;.4f&quot;</span><span class="p">))</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>

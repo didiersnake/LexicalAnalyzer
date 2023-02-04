@@ -1,5 +1,4 @@
 import tokens 
-import numpy as np
 from tabulate import tabulate
 def detect_keywords(text):
 	arr = []
@@ -31,21 +30,7 @@ def detect_num(text):
 		except:
 			pass
 	return list(set(arr))
-"""
-this is original function for detecting identifier
-def is_identifier(token):
-    if token[0] in numbers or token in keywords:
-        return False
-    else:
-        return identifier(token)
-def identifier(token):
-    if len(token)<2 and (token[0] in alphabets or token[0] in numbers or token[0] == "_"):
-        return True
-    elif token[0] in alphabets or token[0] in numbers or token[0] == "_":
-        return identifier(token[1:])
-    else:
-        return False
-"""
+
 def detect_identifiers(text):
 	k = detect_keywords(text)
 	o = detect_operators(text)
@@ -60,14 +45,9 @@ def detect_identifiers(text):
 
 with open('test.txt') as t:
 	text = t.read().split()
-
+print("Table of tokens")
 headers = ['Keywords', 'Operators', 'Delimiters', 'Identifiers', 'Numbers']
 table = zip(detect_keywords(text), detect_operators(
 	text), detect_delimiters(text), detect_identifiers(text), detect_num(text))
 print(tabulate(table, headers=headers, floatfmt=".4f"))
 
-print("Keywords: ", detect_keywords(text))
-print("Operators: ",detect_operators(text))
-print("Delimiters: ",detect_delimiters(text))
-print("Identifiers: ",detect_identifiers(text))
-print("Numbers: ",detect_num(text))

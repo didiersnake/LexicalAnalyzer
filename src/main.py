@@ -1,6 +1,7 @@
 import tokens
 from tabulate import tabulate
 
+
 # ==== Detect Keywords ====
 def detect_keywords(text):
     """
@@ -96,7 +97,8 @@ def detect_identifiers(text):
 
 with open('src/test.txt') as t:
 	text = t.read().split()
-print("Table of tokens")
+print("----Table of tokens----")
+print("Column of tokens and rows of lexemes")
 headers = ['Keywords', 'Operators', 'Delimiters', 'Identifiers', 'Numbers']
 table = zip(detect_keywords(text), detect_operators(
 	text), detect_delimiters(text), detect_identifiers(text), detect_num(text))
